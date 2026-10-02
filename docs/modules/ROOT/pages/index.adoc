@@ -1,0 +1,16 @@
+= IT Calendario Overview
+
+IT Calendario is a standalone local module focused on duty roster, shifts, and vacations management for IT teams.
+
+== Scope
+
+- Runtime scope is restricted to local execution (`127.0.0.1:8574`).
+- Data persistence is file-based and shared-folder compatible.
+- Setup and admin flows are exposed through REST endpoints under `/api/setup`.
+
+== Links
+
+- xref:getting-started.adoc[Getting Started]
+- xref:architecture.adoc[Architecture]
+- xref:requirements.adoc[Requirements]
+- xref:additional-information.adoc[Additional Information]

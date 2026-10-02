@@ -1,0 +1,28 @@
+= Additional Information
+
+== API Error Shape
+
+Setup-required blocking responses include:
+
+- `status`
+- `title`
+- `type`
+- `detail`
+- `code`
+
+== Test Baseline
+
+Run module tests with:
+
+`python -m pytest tests/ -v --cov=cal_app --cov-report=term-missing`
+
+Current target is to keep coverage equal or above 80% for `cal_app`.
+
+== Change Control
+
+Sensitive admin password logic should be validated with non-regression tests touching:
+
+- `POST /api/setup/unlock`
+- `PUT /api/setup/password`
+- `verify_admin_password`
+- `_hash_password`

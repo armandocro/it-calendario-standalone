@@ -1,0 +1,21 @@
+= Architecture
+
+== High-level Design
+
+The module uses:
+
+- FastAPI backend (`cal_app`).
+- Static frontend (`static/`) with vanilla JavaScript.
+- JSON file persistence in configured shared folders.
+
+== Main Components
+
+- `cal_app/main.py`: app composition, middleware, routing and static mounts.
+- `cal_app/setup.py`: initial setup and admin maintenance endpoints.
+- `cal_app/paths.py`: runtime paths, installation metadata and rebind helpers.
+- `cal_app/server.py`: uvicorn entrypoint and browser opening helper.
+
+== Observability
+
+- `X-Request-ID` correlation header is accepted and returned.
+- Structured JSON logs are emitted per request and unhandled request error path.

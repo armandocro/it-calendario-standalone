@@ -1,0 +1,22 @@
+= Getting Started
+
+== Launch
+
+Use the launcher:
+
+`lanzar-calendario.bat`
+
+The app opens at `http://127.0.0.1:8574`.
+
+== Initial Setup
+
+The setup wizard requires:
+
+- Center name.
+- Shared data root path.
+- Admin user and password.
+- Team members and vacations.
+- Shift types and assignments.
+- Duty rotation.
+
+Configuration state is stored in `instalacion.json` near the executable/runtime directory.

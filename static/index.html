@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Calendario | Inditex</title>
+  <link rel="stylesheet" href="/ittool-static/css/ittool.css?v=20261002rep1">
+  <link rel="stylesheet" href="/static/css/cal-app.css?v=6">
+</head>
+<body class="cal-standalone">
+  <a class="skip-link" href="#mainContent">Ir al contenido</a>
+
+  <div id="setupRoot" class="cal-setup-root" hidden></div>
+
+  <div id="appRoot" class="app-layout cal-app-layout" hidden>
+    <header class="cal-topbar">
+      <div class="cal-topbar-brand">
+        <span class="brand-inditex">Inditex</span>
+        <strong class="brand-app" id="calBrandApp">IT Calendario</strong>
+      </div>
+      <p class="cal-topbar-sub" id="calTopbarSub">Guardias · Turnos · Vacaciones</p>
+      <div class="cal-topbar-actions">
+        <span class="cal-version" id="calVersionLabel" title="Versión de la aplicación">v1.0 · Octubre 2026</span>
+        <button type="button" class="btn btn-secondary" id="btnAdminUnlock" title="Ajustes de administrador">Admin</button>
+      </div>
+    </header>
+    <main class="main-content cal-main" id="mainContent" tabindex="-1">
+      <div class="page active" id="page-calendario"></div>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+      <div class="modal-header">
+        <h3 id="modalTitle"></h3>
+        <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Cerrar">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footer" id="modalFooter"></div>
+    </div>
+  </div>
+
+  <div class="floating-stack" id="floating-stack">
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <aside class="aviso-popup-region" id="vac-popup-region" aria-label="Solicitudes de vacaciones" aria-live="polite"></aside>
+    <aside class="aviso-popup-region" id="shift-popup-region" aria-label="Avisos de turno" aria-live="polite"></aside>
+  </div>
+
+  <script src="/ittool-static/vendor/gsap/gsap.min.js?v=3.12.5"></script>
+  <script src="/ittool-static/js/motion.js?v=1"></script>
+  <script src="/static/js/app.js?v=6"></script>
+  <script src="/static/js/setup.js?v=3"></script>
+  <script src="/static/js/admin.js?v=3"></script>
+  <script src="/ittool-static/js/utils.js?v=20261002drag1"></script>
+  <script>
+    document.getElementById('modalCloseBtn').addEventListener('click', function () {
+      if (typeof closeModal === 'function') closeModal();
+    });
+    bootCalStandalone();
+  </script>
+</body>
+</html>

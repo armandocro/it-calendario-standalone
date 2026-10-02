@@ -1,0 +1,22 @@
+= Requirements
+
+== Runtime
+
+- Python 3.x environment for development mode.
+- Access to a writable local/shared folder for data.
+
+== Data
+
+Expected files/directories after setup:
+
+- `calendario/eventos.json`
+- `calendario/backup/`
+- `sistema/admins.json`
+- `sistema/auth.json`
+- `sistema/backup/`
+
+== Security Notes
+
+- Admin password is hashed using PBKDF2 SHA-256 with random salt.
+- Password verification uses constant-time comparison.
+- Local app scope; no corporate OAuth integration is applied in this standalone module.
